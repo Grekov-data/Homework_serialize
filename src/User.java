@@ -18,8 +18,8 @@ public class User implements Serializable {
 
 
     public String toString() {
-        return "\nпользователь:\n" +
-                "логин: " + nickname +
-                ", пароль: " + password;
+        return "\nРїРѕР»СЊР·РѕРІР°С‚РµР»СЊ:\n" +
+                "Р»РѕРіРёРЅ: " + nickname +
+                ", РїР°СЂРѕР»СЊ: " + password;
     }
 }
