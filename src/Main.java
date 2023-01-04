@@ -24,46 +24,46 @@ public class Main {
 
         registrationSystem.setUsers(users);
 
-        System.out.println("\nДобро пожаловать в систему регистрации пользователей!");
+        System.out.println("\nР”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ СЃРёСЃС‚РµРјСѓ СЂРµРіРёСЃС‚СЂР°С†РёРё РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№!");
         while(true) {
-            System.out.println("Вы можете...\n" +
-                    "1. Авторизироваться;\n" +
-                    "2. Зарегистрироваться;\n" +
-                    "3.Завершить сеанс (выйти).");
-            System.out.print("Введите номер(№) необходимой операции: ");
+            System.out.println("Р’С‹ РјРѕР¶РµС‚Рµ...\n" +
+                    "1. РђРІС‚РѕСЂРёР·РёСЂРѕРІР°С‚СЊСЃСЏ;\n" +
+                    "2. Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ;\n" +
+                    "3.Р—Р°РІРµСЂС€РёС‚СЊ СЃРµР°РЅСЃ (РІС‹Р№С‚Рё).");
+            System.out.print("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ(в„–) РЅРµРѕР±С…РѕРґРёРјРѕР№ РѕРїРµСЂР°С†РёРё: ");
             int action = Saction.nextInt();
-            //АВТОРИЗАЦИЯ
+            //РђР’РўРћР РР—РђР¦РРЇ
             if (action == 1) {
-                System.out.println("Введите логин и пароль для входа в систему:");
-                System.out.print("логин: ");
+                System.out.println("Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ РґР»СЏ РІС…РѕРґР° РІ СЃРёСЃС‚РµРјСѓ:");
+                System.out.print("Р»РѕРіРёРЅ: ");
                 nickname=S1.nextLine();
-                System.out.print("пароль: ");
+                System.out.print("РїР°СЂРѕР»СЊ: ");
                 password=S1.nextLine();
                 if (registrationSystem.login(nickname, password) != null)
-                    System.out.println("Вы успешно авторизованы");
+                    System.out.println("Р’С‹ СѓСЃРїРµС€РЅРѕ Р°РІС‚РѕСЂРёР·РѕРІР°РЅС‹");
                 if (registrationSystem.login(nickname, password) == null)
-                    System.out.println("Неверный логин или пароль");
+                    System.out.println("РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ");
             }
 
 
-            //РЕГИСТРАЦИЯ
+            //Р Р•Р“РРЎРўР РђР¦РРЇ
             if (action == 2) {
-                System.out.println("Введите логин и пароль для регистрации нового пользователя:");
-                System.out.print("логин: ");
+                System.out.println("Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРё РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:");
+                System.out.print("Р»РѕРіРёРЅ: ");
                 nickname=S2.nextLine();
-                System.out.print("пароль: ");
+                System.out.print("РїР°СЂРѕР»СЊ: ");
                 password=S2.nextLine();
 
                 if (registrationSystem.register(nickname, password))
-                    System.out.println("Такой пользователь уже существует");
+                    System.out.println("РўР°РєРѕР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚");
                 else {
                     users.add(new User(nickname, password));
-                    System.out.println("Вы успешно зарегистрировались!");
+                    System.out.println("Р’С‹ СѓСЃРїРµС€РЅРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р»РёСЃСЊ!");
                 }
             }
 
 
-            //ВЫХОД ИЗ ПРОГРАММЫ
+            //Р’Р«РҐРћР” РР— РџР РћР“Р РђРњРњР«
             if (action == 3)
                 break;
         }
