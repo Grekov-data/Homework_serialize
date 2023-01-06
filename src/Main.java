@@ -53,11 +53,12 @@ public class Main {
                 nickname=S2.nextLine();
                 System.out.print("пароль: ");
                 password=S2.nextLine();
+                Date date = new Date();
 
                 if (registrationSystem.register(nickname, password))
                     System.out.println("Такой пользователь уже существует");
                 else {
-                    users.add(new User(nickname, password));
+                    users.add(new User(nickname, password, date));
                     System.out.println("Вы успешно зарегистрировались!");
                 }
             }
@@ -70,4 +71,3 @@ public class Main {
         registrationSystem.saveData(users);
     }
 }
-
